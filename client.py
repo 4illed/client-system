@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 
 
 class Client(ABC):
@@ -9,7 +9,10 @@ class Client(ABC):
 
     def get_info(self):
         """Возвращает информацию о клиенте: имя и e-mail."""
-        return f"Имя: {self.name}, Email: {self.email}"
+        return {
+            "Имя": self.name,
+            "Email": self.email,
+        }
 
     def update_info(self, name=None, email=None):
         """Обновляет данные клиента."""
@@ -18,7 +21,6 @@ class Client(ABC):
         if email is not None:
             self.email = email
 
-    @abstractmethod
     def __str__(self):
         """
         Магический метод для красивого представления клиента.
