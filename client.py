@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 
 
 class Client(ABC):
@@ -18,7 +18,6 @@ class Client(ABC):
         if email is not None:
             self.email = email
 
-    @abstractmethod
     def __str__(self):
         """
         Магический метод для красивого представления клиента.
