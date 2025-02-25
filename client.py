@@ -9,7 +9,10 @@ class Client(ABC):
 
     def get_info(self):
         """Возвращает информацию о клиенте: имя и e-mail."""
-        return f"Имя: {self.name}, Email: {self.email}"
+        return {
+            "Имя": self.name,
+            "Email": self.email,
+        }
 
     def update_info(self, name=None, email=None):
         """Обновляет данные клиента."""
