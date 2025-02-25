@@ -3,6 +3,10 @@ from user import User
 
 
 class Admin(Client):
+    def __init__(self, name, email):
+        """Инициализация администратора с именем и адресом электронной почты."""
+        super().__init__(name, email)
+
     def get_info(self): ...
 
     def manage_users(self, user, action, **kwargs):
