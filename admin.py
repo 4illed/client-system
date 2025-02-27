@@ -8,8 +8,8 @@ class Admin(Client):
         super().__init__(name, email)
 
     def get_info(self):
-        """Возвращает информацию о клиенте: имя и e-mail."""
-        return f"Admin: {self.name}, Email: {self.email}"
+        """Возвращает информацию об Админе: имя и e-mail."""
+        return f"Администратор: {self.name}, Email: {self.email}"
 
     def manage_users(self, user, action, **kwargs):
         """
