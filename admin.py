@@ -7,9 +7,12 @@ class Admin(Client):
         """Инициализация администратора с именем и адресом электронной почты."""
         super().__init__(name, email)
 
-
-def get_info(self):
-    return {"Администратор": self.name, "Электронная почта": self.email}
+    def get_info(self):
+        """Возвращает информацию об Админе: имя и e-mail."""
+        return {
+            'Администратор': self.name, 
+            'Email': self.email
+        }
 
     def manage_users(self, user, action, **kwargs):
         """
