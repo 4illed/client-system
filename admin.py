@@ -9,7 +9,10 @@ class Admin(Client):
 
     def get_info(self):
         """Возвращает информацию об Админе: имя и e-mail."""
-        return f"Администратор: {self.name}, Email: {self.email}"
+        return {
+            'Администратор': self.name, 
+            'Email': self.email
+        }
 
     def manage_users(self, user, action, **kwargs):
         """
