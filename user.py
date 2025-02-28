@@ -8,7 +8,10 @@ class User(Client):
         self.purchase_history = []
         
     def get_info(self): 
-        return f'Пользователь: {self.name}, Email: {self.email}'
+        return {
+            'Пользователь': self.name, 
+            'Email': {self.email},
+        }
     
     def add_to_purchase_history(self, product_name, price):
         """Добавляет товар в историю покупок"""
