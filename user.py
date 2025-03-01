@@ -10,7 +10,7 @@ class User(Client):
     def get_info(self): 
         return {
             'Пользователь': self.name, 
-            'Email': {self.email},
+            'Email': self.email,
         }
     
     def add_to_purchase_history(self, product_name, price):
