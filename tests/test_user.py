@@ -7,7 +7,10 @@ class TestUser(unittest.TestCase):
         self.user = User("Иван Иванов", "ivan@example.com")
     
     def test_get_info(self):
-        expected_info = "Пользователь: Иван Иванов, Email: ivan@example.com"
+        expected_info = {
+            "Пользователь": 'Иван Иванов', 
+            "Email": 'ivan@example.com'
+        }
         self.assertEqual(self.user.get_info(), expected_info)    
         
     def test_get_purchase_history_empty(self):
