@@ -1,4 +1,5 @@
 import unittest
+from user import User
 from admin import Admin
 
 
@@ -11,11 +12,14 @@ class TestAdminFunction(unittest.TestCase):
         # Ожидаемый результат
         expected_info = {
             "Администратор": "Артём",
-            "Электронная почта": "example@mail.ru",
+            "Email": "example@mail.ru",
         }
         # Проверяем, что метод get_info возвращает правильный словарь
         self.assertEqual(self.admin.get_info(), expected_info)
 
-
-if __name__ == "__main__":
-    unittest.main()
+    def test_manage_users(self):
+        user = User("Иван", "ivan@example.com")
+        result = self.admin.manage_users(
+            user, "change_username", new_name="Иван Иванов"
+        )
+        self.assertEqual(user.name, "Иван Иванов")
